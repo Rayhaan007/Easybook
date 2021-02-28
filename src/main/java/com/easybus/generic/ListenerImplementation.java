@@ -33,7 +33,7 @@ public class ListenerImplementation extends BaseClass implements ITestListener{
 	public void onTestFailure(ITestResult result) {
 		extentTest.get().fail(result.getThrowable());
 		String easybook=result.getMethod().getMethodName();
-		String path="./failureScreenShot/"+easybook+".png";
+		String path=System.getProperty("user.dir")+"/failureScreenShot/"+easybook+".png";
 		try {
 			extentTest.get().addScreenCaptureFromPath(path);
 		}
@@ -69,7 +69,6 @@ public class ListenerImplementation extends BaseClass implements ITestListener{
 
 	@Override
 	public void onFinish(ITestContext context) {
-		// TODO Auto-generated method stub
 		extent.flush();
 	}
 
