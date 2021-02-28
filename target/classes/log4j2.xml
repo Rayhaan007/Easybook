@@ -1,0 +1,16 @@
+<configuration status="WARN">
+<Appenders>
+<RollingFile name="File" fileName="logs/prints.log" filePattern="logs/prints-%d{MMM-DD}%d{mm:ss:SSS}.log">
+	<PatternLayout Patter="%d{HH:mm:ss:SSS}[%t]%-5level%Logger{36}-%msg%n"/>
+	<SizeBasedTriggeringPolicy size="5000"/>
+</RollingFile> 
+<console name="console" target="System_out">
+<PatternLayout Patter="%d{HH:mm:ss:SSS}[%t]%-5level%Logger{36}-%msg%n"/>
+</console>
+</Appenders>
+<Loggers>
+<Root level="trace">
+<AppenderRef ref="File"/>
+</Root>
+</Loggers>
+</configuration>
